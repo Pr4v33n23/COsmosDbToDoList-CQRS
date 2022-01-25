@@ -1,0 +1,9 @@
+/home/madking/RiderProjects/ToDoList/ToDoList.Shared/bin/Debug/netcoreapp3.1/ToDoList.Shared.deps.json
+/home/madking/RiderProjects/ToDoList/ToDoList.Shared/bin/Debug/netcoreapp3.1/ToDoList.Shared.dll
+/home/madking/RiderProjects/ToDoList/ToDoList.Shared/bin/Debug/netcoreapp3.1/ToDoList.Shared.pdb
+/home/madking/RiderProjects/ToDoList/ToDoList.Shared/obj/Debug/netcoreapp3.1/ToDoList.Shared.csprojAssemblyReference.cache
+/home/madking/RiderProjects/ToDoList/ToDoList.Shared/obj/Debug/netcoreapp3.1/ToDoList.Shared.AssemblyInfoInputs.cache
+/home/madking/RiderProjects/ToDoList/ToDoList.Shared/obj/Debug/netcoreapp3.1/ToDoList.Shared.AssemblyInfo.cs
+/home/madking/RiderProjects/ToDoList/ToDoList.Shared/obj/Debug/netcoreapp3.1/ToDoList.Shared.csproj.CoreCompileInputs.cache
+/home/madking/RiderProjects/ToDoList/ToDoList.Shared/obj/Debug/netcoreapp3.1/ToDoList.Shared.dll
+/home/madking/RiderProjects/ToDoList/ToDoList.Shared/obj/Debug/netcoreapp3.1/ToDoList.Shared.pdb
