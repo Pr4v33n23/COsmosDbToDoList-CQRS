@@ -44,6 +44,7 @@ namespace TodoList.Infrastructure.Database.DataAccess
             Container = CosmosClient.GetContainer(DatabaseName, modelName);
         }
         
+        //call the below function to create database automatically
         public override async Task<HttpStatusCode> CreateDatabase(string databaseName, CancellationToken cancellationToken = default)
         {
             try
@@ -59,6 +60,7 @@ namespace TodoList.Infrastructure.Database.DataAccess
             }
         }
 
+        //call the below function to create container automatically
         public override async Task<HttpStatusCode> CreateContainer(string databaseName, string containerName, Guid id, CancellationToken cancellationToken = default)
         {
             try

@@ -28,7 +28,6 @@ namespace ToDoList.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.Configure<ApplicationSettings>(Configuration.GetSection("ApplicationSettings"));
             services.RegisterDependencies(Configuration);
         }
 

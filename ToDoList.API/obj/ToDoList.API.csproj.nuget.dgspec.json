@@ -27,6 +27,12 @@
             "projectReferences": {
               "/home/madking/RiderProjects/ToDoList/ToDoList.Shared/ToDoList.Shared.csproj": {
                 "projectPath": "/home/madking/RiderProjects/ToDoList/ToDoList.Shared/ToDoList.Shared.csproj"
+              },
+              "/home/madking/RiderProjects/ToDoList/TodoList.Domain/TodoList.Domain.csproj": {
+                "projectPath": "/home/madking/RiderProjects/ToDoList/TodoList.Domain/TodoList.Domain.csproj"
+              },
+              "/home/madking/RiderProjects/ToDoList/TodoList.Infrastructure/TodoList.Infrastructure.csproj": {
+                "projectPath": "/home/madking/RiderProjects/ToDoList/TodoList.Infrastructure/TodoList.Infrastructure.csproj"
               }
             }
           }
@@ -40,6 +46,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[10.0.1, )"
@@ -102,6 +116,120 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.416/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/madking/RiderProjects/ToDoList/TodoList.Domain/TodoList.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/madking/RiderProjects/ToDoList/TodoList.Domain/TodoList.Domain.csproj",
+        "projectName": "TodoList.Domain",
+        "projectPath": "/home/madking/RiderProjects/ToDoList/TodoList.Domain/TodoList.Domain.csproj",
+        "packagesPath": "/home/madking/.nuget/packages/",
+        "outputPath": "/home/madking/RiderProjects/ToDoList/TodoList.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/madking/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.416/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/madking/RiderProjects/ToDoList/TodoList.Infrastructure/TodoList.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/madking/RiderProjects/ToDoList/TodoList.Infrastructure/TodoList.Infrastructure.csproj",
+        "projectName": "TodoList.Infrastructure",
+        "projectPath": "/home/madking/RiderProjects/ToDoList/TodoList.Infrastructure/TodoList.Infrastructure.csproj",
+        "packagesPath": "/home/madking/.nuget/packages/",
+        "outputPath": "/home/madking/RiderProjects/ToDoList/TodoList.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/madking/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/home/madking/RiderProjects/ToDoList/ToDoList.Shared/ToDoList.Shared.csproj": {
+                "projectPath": "/home/madking/RiderProjects/ToDoList/ToDoList.Shared/ToDoList.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Azure.Cosmos": {
+              "target": "Package",
+              "version": "[3.23.0, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[6.0.2-mauipre.1.22054.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

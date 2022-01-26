@@ -4,6 +4,6 @@ namespace TodoList.Domain.Entities.Base
 {
     public class BaseEntity
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
     }
 }
