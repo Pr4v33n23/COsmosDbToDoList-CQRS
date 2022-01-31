@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using MediatR;
@@ -46,7 +47,14 @@ namespace ToDoList.API.Configuration
                     Title = "ToDo API",
                     Description = "A simple example ASP.NET Core Web API",
                 });
+                
+                
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
+            
 
         }
 

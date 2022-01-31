@@ -23,6 +23,20 @@ namespace ToDoList.API.Controllers
             _mediator = mediator;
         }
 
+        /// <summary>
+        /// Creates a TodoItem.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Todo
+        ///     {
+        ///        "taskId": 1,
+        ///        "task": "Item1",
+        ///        "description": "to complete Item1"
+        ///     }
+        ///
+        /// </remarks>
         [HttpPost("addnewtodo")]
         public async Task<IActionResult> AddNewToDoListV1(AddNewToDoCommand newToDoCommand)
         {
@@ -44,6 +58,22 @@ namespace ToDoList.API.Controllers
             var response = await _mediator.Send(new GetAllToDosV2Query());
             return Ok(response);
         }
+        
+        /// <summary>
+        /// Creates a TodoItem.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Todo
+        ///     {
+        ///        "taskId": 1,
+        ///        "task": "Item1",
+        ///        "description": "to complete Item1",
+        ///        "isImportant": true
+        ///     }
+        ///
+        /// </remarks>
         
         [HttpPost("addnewtodo")]
         [MapToApiVersion("2.0")]

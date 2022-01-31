@@ -42,8 +42,10 @@ namespace ToDoList.API
             app.UseSwagger();
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.)
-            app.UseSwaggerUI();
-
+            app.UseSwaggerUI(options =>
+            {
+                options.DefaultModelsExpandDepth(-1);
+            });
 
             app.UseHttpsRedirection();
 
