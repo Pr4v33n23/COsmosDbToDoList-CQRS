@@ -55,3 +55,9 @@
 /home/madking/RiderProjects/ToDoList/ToDoList.API/bin/Debug/netcoreapp3.1/TodoList.Infrastructure.dll
 /home/madking/RiderProjects/ToDoList/ToDoList.API/bin/Debug/netcoreapp3.1/TodoList.Domain.pdb
 /home/madking/RiderProjects/ToDoList/ToDoList.API/bin/Debug/netcoreapp3.1/TodoList.Infrastructure.pdb
+/home/madking/RiderProjects/ToDoList/ToDoList.API/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.dll
+/home/madking/RiderProjects/ToDoList/ToDoList.API/obj/Debug/netcoreapp3.1/ToDoList.API.MvcApplicationPartsAssemblyInfo.cs
+/home/madking/RiderProjects/ToDoList/ToDoList.API/bin/Debug/netcoreapp3.1/Microsoft.OpenApi.dll
+/home/madking/RiderProjects/ToDoList/ToDoList.API/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.Swagger.dll
+/home/madking/RiderProjects/ToDoList/ToDoList.API/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/madking/RiderProjects/ToDoList/ToDoList.API/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerUI.dll

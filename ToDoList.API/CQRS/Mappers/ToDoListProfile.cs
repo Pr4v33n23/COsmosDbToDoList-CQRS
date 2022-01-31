@@ -1,8 +1,7 @@
 using AutoMapper;
-using ToDoList.API.CQRS.Handlers.Commands;
 using ToDoList.API.CQRS.Handlers.Commands.AddNewToDo;
-using TodoList.Domain.Entities.ToDo;
-using ToDoList.Shared.Dto;
+using ToDoList.API.CQRS.Handlers.Queries.GetAllToDos;
+using ToDoList.Domain.Entities.ToDo.V1;
 
 namespace ToDoList.API.CQRS.Mappers
 {
@@ -10,11 +9,14 @@ namespace ToDoList.API.CQRS.Mappers
     {
         public ToDoListProfile()
         {
-            //DTO to Command
-            CreateMap<AddNewToDoDto, AddNewToDoCommand>();
-            //Command to Entity
-            CreateMap<AddNewToDoCommand, ToDo>();
+            //CommandRequest to Entity
+            CreateMap<AddNewToDoCommand, ToDos>();
+            //Entity to CommandResponse
+            CreateMap<ToDos, AddNewToDoCommandResponse>();
             
+            //Entity to QueryResponse
+            CreateMap<ToDos, GetAllToDosQueryResponse>();
+
         }
     }
 }

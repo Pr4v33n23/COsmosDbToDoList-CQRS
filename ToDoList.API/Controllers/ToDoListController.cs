@@ -1,28 +1,64 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ToDoList.API.CQRS.Handlers.Commands.AddNewToDo;
-using ToDoList.Shared.Dto;
+using ToDoList.API.CQRS.Handlers.Commands.AddNewToDoV2;
+using ToDoList.API.CQRS.Handlers.Queries.GetAllToDos;
+using ToDoList.API.CQRS.Handlers.Queries.GetAllToDosV2;
 
 namespace ToDoList.API.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]/[action]")]
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ToDoListController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly IMapper _mapper;
 
-        public ToDoListController(IMediator mediator, IMapper mapper)
+        public ToDoListController(IMediator mediator)
         {
             _mediator = mediator;
-            _mapper = mapper;
         }
 
-        [HttpPost]
-        public async Task<Unit> AddNewToDoList(AddNewToDoDto payLoad) =>
-            await _mediator.Send(_mapper.Map<AddNewToDoCommand>(payLoad));
+        [HttpPost("addnewtodo")]
+        public async Task<IActionResult> AddNewToDoListV1(AddNewToDoCommand newToDoCommand)
+        {
+            var response  =  await _mediator.Send(newToDoCommand);
+            return CreatedAtAction("GetToDo", new {taskId = response.TaskId}, response);
+        }
+
+        [HttpGet("getalltodos")]
+        public async Task<IActionResult> GetAllToDosV1()
+        {
+            var response = await _mediator.Send(new GetAllToDosQuery());
+            return Ok(response);
+        }
         
+        [HttpGet("getalltodos")]
+        [MapToApiVersion("2.0")]
+        public async Task<IActionResult> GetAllToDosV2()
+        {
+            var response = await _mediator.Send(new GetAllToDosV2Query());
+            return Ok(response);
+        }
+        
+        [HttpPost("addnewtodo")]
+        [MapToApiVersion("2.0")]
+        public async Task<IActionResult> AddNewToDoListV2(AddNewToDoV2Command newToDoCommand)
+        {
+            var response  =  await _mediator.Send(newToDoCommand);
+            return CreatedAtAction("GetToDo", new {taskId = response.TaskId}, response);
+        }
+
+        [HttpGet]
+
+        public async Task<IActionResult> GetToDo()
+        {
+            return Ok();
+        }
+
     }
 }

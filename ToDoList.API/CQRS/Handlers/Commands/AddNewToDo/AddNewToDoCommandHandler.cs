@@ -2,12 +2,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
-using TodoList.Domain.Entities.ToDo;
+using ToDoList.Domain.Entities.ToDo.V1;
 using TodoList.Infrastructure.Database.DataAccess;
 
 namespace ToDoList.API.CQRS.Handlers.Commands.AddNewToDo
 {
-    public class AddNewToDoCommandHandler : IRequestHandler<AddNewToDoCommand, Unit>
+    public class AddNewToDoCommandHandler : IRequestHandler<AddNewToDoCommand, AddNewToDoCommandResponse>
     {
         private readonly ICosmosDbService _cosmosDbService;
         private readonly IMapper _mapper;
@@ -17,11 +17,12 @@ namespace ToDoList.API.CQRS.Handlers.Commands.AddNewToDo
             _cosmosDbService = cosmosDbService;
             _mapper = mapper;
         }
-        public async Task<Unit> Handle(AddNewToDoCommand request, CancellationToken cancellationToken)
+        public async Task<AddNewToDoCommandResponse> Handle(AddNewToDoCommand request, CancellationToken cancellationToken)
         {
-            var toDo = _mapper.Map<ToDo>(request);
-            await _cosmosDbService.AddItem(request.TaskId, toDo, cancellationToken);
-            return await Task.FromResult(Unit.Value);
+            var toDos = _mapper.Map<ToDos>(request);
+            var response = await _cosmosDbService.AddItemAsync(toDos.TaskId,toDos, cancellationToken);
+
+            return _mapper.Map<AddNewToDoCommandResponse>(response);
         }
         
     }
